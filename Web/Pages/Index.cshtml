@@ -1,0 +1,30 @@
+﻿@page
+@model DeeWebAppAssessment.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Increment Number</h1>
+<form method="post">
+    <button type="submit" name="submitButton" value="increment" class="btn btn-primary">Increment number by 1</button>
+</form>
+<p>Current Count: @Model.ClickCount</p>
+
+<hr />
+
+<h1>String Reversal</h1>
+<form method="post">
+    <div>
+        <label for="inputText">Enter a string:</label>
+        <input type="text" id="inputText" name="InputText" value="@Model.InputText" />
+    </div>
+    <button type="submit" name="submitButton" value="reverse" class="btn btn-primary">Reverse String</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.ReversedString) || !string.IsNullOrEmpty(Model.ReversedWords))
+{
+    <div>
+        <p><strong>Reversed String:</strong> @Model.ReversedString</p>
+        <p><strong>Reversed Words:</strong> @Model.ReversedWords</p>
+    </div>
+}
